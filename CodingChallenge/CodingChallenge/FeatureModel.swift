@@ -9,5 +9,10 @@
 import Foundation
 import SwiftyJSON
 struct FeatureModel {
-   
+    let currentPage: Int
+    let photos: [Picture]?
+    
+    static func getFeature(rawPictures: [JSON]?, currentPage:Int) -> FeatureModel {
+        return FeatureModel(currentPage: currentPage, photos: Picture.getPicturesFrom(rawArray: rawPictures))
+    }
 }
