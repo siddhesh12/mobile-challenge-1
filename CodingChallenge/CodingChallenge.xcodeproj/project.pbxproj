@@ -101,18 +101,13 @@
 		5A82CE92209C96C300436C90 /* CodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				5AFFBF5B209D6976002EC400 /* Resource */,
+				5A82CEC3209D68C100436C90 /* Models */,
+				5A82CEC2209D689E00436C90 /* Views */,
+				5A82CEC1209D688A00436C90 /* Controllers */,
+				5A82CEC4209D68E800436C90 /* Storyboard */,
 				5A82CE93209C96C300436C90 /* AppDelegate.swift */,
-				5A82CE95209C96C300436C90 /* ViewController.swift */,
 				5A82CEB3209CA1E300436C90 /* ApiManager.swift */,
-				5A82CE97209C96C300436C90 /* Main.storyboard */,
-				5A82CEBC209D221C00436C90 /* DetailViewController.swift */,
-				5A82CEBA209CDEFB00436C90 /* GridCollectionViewCell.swift */,
-				5A82CE9A209C96C600436C90 /* Assets.xcassets */,
-				5A82CE9C209C96C600436C90 /* LaunchScreen.storyboard */,
-				5A82CE9F209C96C600436C90 /* Info.plist */,
-				5A82CEB5209CA40300436C90 /* Picture.swift */,
-				5A82CEB7209CB99300436C90 /* FeatureModel.swift */,
-				5A82CEBE209D261800436C90 /* DetailCollectionCell.swift */,
 			);
 			path = CodingChallenge;
 			sourceTree = "<group>";
@@ -124,6 +119,51 @@
 				5A82CEAA209C96C600436C90 /* Info.plist */,
 			);
 			path = CodingChallengeTests;
+			sourceTree = "<group>";
+		};
+		5A82CEC1209D688A00436C90 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A82CE95209C96C300436C90 /* ViewController.swift */,
+				5A82CEBC209D221C00436C90 /* DetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5A82CEC2209D689E00436C90 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A82CEBA209CDEFB00436C90 /* GridCollectionViewCell.swift */,
+				5A82CEBE209D261800436C90 /* DetailCollectionCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A82CEC3209D68C100436C90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A82CEB5209CA40300436C90 /* Picture.swift */,
+				5A82CEB7209CB99300436C90 /* FeatureModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5A82CEC4209D68E800436C90 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5A82CE97209C96C300436C90 /* Main.storyboard */,
+				5A82CE9C209C96C600436C90 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		5AFFBF5B209D6976002EC400 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				5A82CE9A209C96C600436C90 /* Assets.xcassets */,
+				5A82CE9F209C96C600436C90 /* Info.plist */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 		D031A8D8051746305AABC16B /* Pods */ = {

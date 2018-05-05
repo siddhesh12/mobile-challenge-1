@@ -31,18 +31,9 @@ class APIManager: NSObject{
     
      static let shared = APIManager()
     
-//    private override init() {
-//        super.init()
-//        let configuration = URLSessionConfiguration.default
-//        configuration.httpMaximumConnectionsPerHost = 10
-//        configuration.timeoutIntervalForRequest = 30
-//        configuration.timeoutIntervalForResource =  30
-//    }
-    
     func getPhotos(currentPage:Int, completionHandler: @escaping (Result<FeatureModel>) -> Void){
         
         let parameters: [String: String] = ["consumer_key": consumerKey, "page": "\(currentPage + 1)", "image_size":"2048"]
-        
         Alamofire.request(serverURL+images, parameters: parameters).validate().responseJSON { (responseObject) in
             
             switch responseObject.result {

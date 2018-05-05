@@ -39,8 +39,11 @@ class DetailViewController: UIViewController {
         DispatchQueue.main.async {
             self.detailCollectionView.scrollToItem(at: self.selectedIndexPath, at: .centeredHorizontally, animated: false)
             self.updateBottomView(picture: self.delegate!.pictureAtIndexPath(indexPath: self.selectedIndexPath))
-            self.delegate!.scrollToIndexPath(self.selectedIndexPath)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.delegate!.scrollToIndexPath(self.selectedIndexPath)
     }
 
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {

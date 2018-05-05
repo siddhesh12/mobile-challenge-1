@@ -17,6 +17,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var pictures = [Picture]()
     var currentPage = 0
+    var rowHeight:CGFloat = 3
+    var isLandscapeMode:Bool{
+        get{ return self.isLandscapeMode}
+        set{
+            if newValue{
+                rowHeight = 2
+            }else{
+                rowHeight = 4
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
@@ -25,6 +36,7 @@ class ViewController: UIViewController {
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         
+        isLandscapeMode = UIDevice.current.orientation.isLandscape
         collectionView.collectionViewLayout.invalidateLayout()
         DispatchQueue.main.async {
             self.collectionView.reloadData()
@@ -49,32 +61,17 @@ UICollectionViewDelegateFlowLayout {
             getPhotos{_ in}
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return getNumberOfPictures()
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
-        let picture = pictureAtIndexPath(indexPath: indexPath)
-//        return CGSize(width: Double(picture.width!), height: Double(picture.height!))
-        if indexPath.row % 2 == 0{
-        return CGSize(width: 50, height: 50)
-        }
-        else if indexPath.row % 3 == 0{
-            return CGSize(width: 100, height: 100)
-        }
-        else if indexPath.row % 5 == 0{
-            return CGSize(width: 150, height: 150)
-        }
-        else{
-            return CGSize(width: 200, height: 200)
-        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width / 2 , height: collectionView.frame.size.height / rowHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         var cell:GridCollectionViewCell
-
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GridCollectionViewCell
         
         let picture = pictureAtIndexPath(indexPath: indexPath)
@@ -93,6 +90,7 @@ extension ViewController:DetailViewControllerDelegate {
     func increaseCurrentPage() {
         currentPage += 1
     }
+    
     func getPhotos(completionHandler: @escaping (Result<FeatureModel>) -> Void){
         APIManager.shared.getPhotos(currentPage: currentPage) { (result) in
             switch result{
@@ -118,6 +116,3 @@ extension ViewController:DetailViewControllerDelegate {
         collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: false)
     }
 }
-
-
-
