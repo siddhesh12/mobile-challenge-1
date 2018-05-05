@@ -1,3 +1,31 @@
+# CodingChallenge
+
+## Features
+
+- [x] Grid of photos should preserve the aspect ratio of the photos it's displaying.
+- [x] Grid should work in both portrait and landscape orientations of the device.
+- [x] Grid should support pagination, i.e. you can scroll on grid of photos infinitely.Feature 3
+- [x] When user taps on a photo on the grid she should show the photo in full screen with more information about the photo.
+- [x] When user swipes on a photo in full screen, preserve it's location on the grid, so when she dismisses the full screen, grid of photos should contain the last photo she saw.
+
+## Requirements
+
+- iOS 10.0+
+- Xcode 9.3
+
+## Installation
+
+#### CocoaPods
+You need to install cocoaPod inorder add alamofire:
+
+```ruby
+pod init
+```
+
+## Meta
+
+Siddhesh Mahadeshwar  – siddheshm1212@gmail.com
+
 # Mobile Developer Coding Challenge
 
 This is a coding challenge for prospective mobile developer applicants applying through https://about.500px.com/jobs/ 

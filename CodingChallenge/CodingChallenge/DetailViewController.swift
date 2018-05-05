@@ -9,6 +9,8 @@
 import UIKit
 import SDWebImage
 
+private let reuseIdentifier = "detailCell"
+
 protocol  DetailViewControllerDelegate: class{
     func getNumberOfPictures() -> Int
     func pictureAtIndexPath(indexPath: IndexPath) -> Picture
@@ -16,6 +18,7 @@ protocol  DetailViewControllerDelegate: class{
     func getPhotos(completionHandler: @escaping (Result<FeatureModel>) -> Void)
     func increaseCurrentPage()
 }
+
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var detailCollectionView: UICollectionView!
@@ -77,6 +80,7 @@ extension DetailViewController {
         }
     }
 }
+
 extension DetailViewController: UICollectionViewDataSource, UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout {
     
@@ -104,7 +108,7 @@ UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell:DetailCollectionCell
-        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailCell", for: indexPath) as! DetailCollectionCell
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DetailCollectionCell
         let picture = delegate!.pictureAtIndexPath(indexPath: indexPath)
         guard let imageURL = URL(string: picture.imageUrl) else { return cell}
         cell.imageView.sd_setImage(with: imageURL, completed: nil)
