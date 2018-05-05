@@ -14,11 +14,10 @@ struct Picture {
     let imageUrl: String
     let width: Float?
     let height: Float?
-    var name: String?
     var description: String?
-    var userName: String?
-    var likesCount:Int?
-    var commentsCount:Int?
+    var fullName: String?
+    var likesCount:Int
+    var commentsCount:Int
     var userProfilePicUrl: String?
 
      static func getPicturesFrom(rawArray: [JSON]?) -> [Picture] {
@@ -34,12 +33,11 @@ struct Picture {
                     pictures.append(Picture(id: id, imageUrl: url,
                                             width: dictionary["width"]?.float,
                                             height: dictionary["height"]?.float,
-                                            name: dictionary["width"]?.string,
                                             description: dictionary["description"]?.string,
-                                            userName: dictionary["user"]?["fullname"].string,
-                                            likesCount:dictionary["positive_votes_count"]?.int,
-                                            commentsCount:dictionary["comments_count"]?.int,
-                                            userProfilePicUrl:dictionary["user"]?["avatars"]["tiny"]["https"].string))
+                                            fullName: dictionary["user"]?["fullname"].string,
+                                            likesCount:dictionary["positive_votes_count"]?.int ?? 0,
+                                            commentsCount:dictionary["comments_count"]?.int ?? 0,
+                                            userProfilePicUrl:dictionary["user"]?["avatars"]["default"]["https"].string))
                 }
             }
         

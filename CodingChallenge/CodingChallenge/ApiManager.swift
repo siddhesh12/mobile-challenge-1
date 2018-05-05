@@ -41,7 +41,7 @@ class APIManager: NSObject{
     
     func getPhotos(currentPage:Int, completionHandler: @escaping (Result<FeatureModel>) -> Void){
         
-        let parameters: [String: String] = ["consumer_key": consumerKey, "page": "\(currentPage + 1)"]
+        let parameters: [String: String] = ["consumer_key": consumerKey, "page": "\(currentPage + 1)", "image_size":"2048"]
         
         Alamofire.request(serverURL+images, parameters: parameters).validate().responseJSON { (responseObject) in
             

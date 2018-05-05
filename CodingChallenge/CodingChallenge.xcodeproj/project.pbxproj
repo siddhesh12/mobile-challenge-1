@@ -19,6 +19,7 @@
 		5A82CEB8209CB99300436C90 /* FeatureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A82CEB7209CB99300436C90 /* FeatureModel.swift */; };
 		5A82CEBB209CDEFB00436C90 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A82CEBA209CDEFB00436C90 /* GridCollectionViewCell.swift */; };
 		5A82CEBD209D221C00436C90 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A82CEBC209D221C00436C90 /* DetailViewController.swift */; };
+		5A82CEBF209D261800436C90 /* DetailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A82CEBE209D261800436C90 /* DetailCollectionCell.swift */; };
 		F60411710E5445CA4FDC4100 /* Pods_CodingChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1ACBFDAE3451B39E1D571ED /* Pods_CodingChallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		5A82CEB7209CB99300436C90 /* FeatureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureModel.swift; sourceTree = "<group>"; };
 		5A82CEBA209CDEFB00436C90 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		5A82CEBC209D221C00436C90 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5A82CEBE209D261800436C90 /* DetailCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionCell.swift; sourceTree = "<group>"; };
 		B4FFB86AD1F231159FB5D631 /* Pods-CodingChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodingChallenge/Pods-CodingChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		EBE2B7CE97548169F9385F40 /* Pods_CodingChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodingChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDEA1247D3AED43BE4E25335 /* Pods-CodingChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodingChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodingChallenge/Pods-CodingChallenge.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				5A82CE9F209C96C600436C90 /* Info.plist */,
 				5A82CEB5209CA40300436C90 /* Picture.swift */,
 				5A82CEB7209CB99300436C90 /* FeatureModel.swift */,
+				5A82CEBE209D261800436C90 /* DetailCollectionCell.swift */,
 			);
 			path = CodingChallenge;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				5A82CEB6209CA40300436C90 /* Picture.swift in Sources */,
 				5A82CE96209C96C300436C90 /* ViewController.swift in Sources */,
 				5A82CEB4209CA1E300436C90 /* ApiManager.swift in Sources */,
+				5A82CEBF209D261800436C90 /* DetailCollectionCell.swift in Sources */,
 				5A82CEB8209CB99300436C90 /* FeatureModel.swift in Sources */,
 				5A82CE94209C96C300436C90 /* AppDelegate.swift in Sources */,
 				5A82CEBD209D221C00436C90 /* DetailViewController.swift in Sources */,
